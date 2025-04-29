@@ -1,62 +1,61 @@
--- Nama : intania mona fatana
--- NIM : 23241053
--- Kelas : B 
+-- Nama : Selki debei usyami
+-- NIM  : 23241074
+-- Kelas: B
 
--- membuat database
+-- 1. Membuat database
 CREATE DATABASE mandalika_mart;
 
--- menggunakan database 'mandalika_mart'
+-- 2. Menggunakan database tersebut
 USE mandalika_mart;
 
--- membuat tabel dalam database 'mandalika_mart'
+-- 3. Membuat tabel 'member'
 CREATE TABLE member (
-   member_id varchar(10),
-   username varchar(20),
-   nama varchar(100),
-   tanggal_lahir datetime,
-   angka_favorite int);
-   
-   -- membuat tabel dalam database 'undikma_mart'
-   CREATE TABLE produk (
-	  id_produk varchar(10),
-      nama_produk varchar(25),
-      kategori varchar(15),
-      harga int,
-      Qty int);
-      
-	-- membuat tabel transaksi dalam database 'mandalika_mart'
-    CREATE TABLE transaksi_penjualan (
-       tgl_jual datetime,
-       id_produk varchar(10),
-       member_id varchar(10),
-       nama_produk varchar(25),
-       harga int,
-       Qty int);
-       
--- mengupdate primary key tabel member, produk
-ALTER TABLE member
-ADD PRIMARY KEY (member_id);
+    member_id VARCHAR(10) PRIMARY KEY,
+    username VARCHAR(20),
+    nama VARCHAR(100),
+    tanggal_lahir DATETIME,
+    angka_favorit INT
+);
 
-ALTER TABLE produk
-ADD PRIMARY KEY (id_produk);
+-- 4. Membuat tabel 'produk'
+CREATE TABLE produk (
+    id_produk VARCHAR(10) PRIMARY KEY,
+    nama_produk VARCHAR(25),
+    katagori VARCHAR(15),
+    harga INT,
+    qty INT
+);
 
--- mengupdate foreign key tabel transaksi_penjualan
-ALTER TABLE transaksi_penjualan 
-ADD CONSTRAINT FK_memberTransaksi
-FOREIGN KEY (member_id) REFERENCES member(member_id);
+-- 5. Membuat tabel 'transaksi'
+CREATE TABLE transaksi (
+    tgl_jual DATETIME,
+    id_produk VARCHAR(10),
+    member_id VARCHAR(10),
+    nama_produk VARCHAR(25),
+    harga INT,
+    qty INT,
+    FOREIGN KEY (member_id) REFERENCES member(member_id),
+    FOREIGN KEY (id_produk) REFERENCES produk(id_produk)
+);
 
-ALTER TABLE transaksi_penjualan
-ADD CONSTRAINT FK_produkTransaksi
-FOREIGN KEY (id_produk) REFERENCES produk(id_produk);
+-- 6. Mengisi data contoh pada tabel 'member'
+INSERT INTO member (member_id, username, nama, tanggal_lahir, angka_favorit)
+VALUES 
+('M001', 'selki_u', 'Selki Debei Usyami', '2003-10-21', 7);
 
--- mengisi data pada tabel
-INSERT INTO member(member_id, username, nama, tanggal_lahir, angka_favorite)
-VALUES ('ID-01', 'webmaster', 'Admin', '2004-09-03', 6);
+-- 7. Mengisi data contoh pada tabel 'produk'
+INSERT INTO produk (id_produk, nama_produk, katagori, harga, qty)
+VALUES 
+('P001', 'Sabun Mandi', 'Kebutuhan', 8000, 50),
+('P002', 'Indomie Goreng', 'Makanan', 3000, 100);
+
+-- 8. Mengisi data contoh pada tabel 'transaksi'
+INSERT INTO transaksi (tgl_jual, id_produk, member_id, nama_produk, harga, qty)
+VALUES ('ID-01', 'webmaster', 'Admin', '8000-01-01', 15);
 
 -- mengakses isi data pada tabel member
 SELECT * FROM member;
-      
-      
-      
-      
-   
+
+
+
+
