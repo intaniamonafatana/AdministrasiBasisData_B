@@ -1,5 +1,5 @@
--- Nama		: AULIA ZASKIA
--- NIM		: 23241045
+-- Nama		: intania mona fatana
+-- NIM		: 23241053
 -- Kelas	: PTI 4/B 
 -- Modul	: ORDER BY, Fungsi Agresasi, GRUP BY, HAVING
 
