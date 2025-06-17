@@ -1,5 +1,5 @@
--- Nama : Selki debei usyami
--- NIM  : 23241074
+-- Nama : intania mona fatana
+-- NIM  : 23241053
 -- Kelas: B
 
 -- 1. Membuat database
