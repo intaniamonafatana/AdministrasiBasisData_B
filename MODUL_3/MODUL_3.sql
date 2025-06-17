@@ -1,6 +1,6 @@
 -- Modul    : 3 Nilai Literal, Operator, Fungsi, Date, dan Klausal WHERE
--- Nama     : Aulia zaskia 
--- NIM      : 23241045
+-- Nama     : intania mona fatana
+-- NIM      : 23241053
 -- Kelas    : PTI 4/B 
 
 -- menggunakan database
